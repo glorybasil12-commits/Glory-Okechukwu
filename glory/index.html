@@ -1,53 +1,745 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My project</title>
-</head>
-<body>
-    <header>
-    <img src="image-5.png" alt="me">
 
-
-    </div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact-us">Contact</a>
-        <a href="#FAQ">FAQ</a>
-        <a href="https://www.facebook.com">Facebook</a>
-    </nav>
-</header>
-
-    <main>
-        <h1>Let's Meat</h1>
-        <p class="p">
-            Good food isn't just about taste  it's about the moment. It's the smell of garlic hitting a hot pan, the comfort of a recipe passed down through generations, and the joy of sharing a meal with people you love. We believe every dish tells a story, whether it's a quick weeknight dinner or a slow Sunday feast. That's why we bring you recipes that actually work, ingredients you can find, and tips that make cooking feel less like a chore and more like something you look forward to. No fuss, no pretension  just honest food made simple.
-        </p>
-        <button> Make A Reservation</button>
-        <div class="iframe-row">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d143322.98733608372!2d-4.397264028526422!3d55.8553499951128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488815562056ceeb%3A0x71e683b805ef511e!2sGlasgow%2C%20UK!5e0!3m2!1sen!2sng!4v1790002107450!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/I-k-iTUMQAY?si=SOcVAcEU3jDFj7l9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
-    </main>
-
-    <footer>
-        <div class="me">
-            <ul>Name:Okechukwu Glory E</ul>
-            <ul>Reg No: 202440698102GA</ul>
-            <ul>24/241144203</ul>
-            <ul> Arvys Tech</ul>
-            <ul>  Unical</ul>
-        </div>
-        
-
-    </footer>
-    
-            
-            
            
-          
-</body>
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smashburger</title><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    background: #fff;
+}
+
+/* TOP REWARDS BAR */
+.top-bar {
+    background: #f5c400;
+    color: #000;
+    text-align: center;
+    padding: 13px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.top-bar a {
+    color: #000;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+/* NAVIGATION */
+header {
+    background: #000;
+    color: white;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: 1000;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #f5c400;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f5c400;
+}
+
+.order-btn {
+    background: #f5c400;
+    color: #000 !important;
+    padding: 13px 20px;
+    border-radius: 3px;
+}
+
+/* HERO */
+.hero {
+    min-height: 600px;
+    background:
+        linear-gradient(rgba(0,0,0,.28), rgba(0,0,0,.28)),
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 7%;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: .88;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.yellow-btn {
+    display: inline-block;
+    background: #f5c400;
+    color: #000;
+    padding: 17px 32px;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.yellow-btn:hover {
+    background: white;
+}
+
+/* REWARDS */
+.rewards {
+    background: #f5c400;
+    padding: 75px 7%;
+    text-align: center;
+}
+
+.rewards h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    text-transform: uppercase;
+    font-weight: 1000;
+    margin-bottom: 18px;
+}
+
+.rewards p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.black-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 16px 30px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    font-size: clamp(38px, 5vw, 60px);
+    text-transform: uppercase;
+    font-weight: 1000;
+    margin-bottom: 45px;
+}
+
+/* MENU */
+.menu-section {
+    padding: 80px 5%;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.menu-card {
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+    min-height: 290px;
+}
+
+.menu-card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.06);
+}
+
+.menu-card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 15px;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 1000;
+    background: linear-gradient(transparent, rgba(0,0,0,.9));
+}
+
+/* CRAFT */
+.craft {
+    background: #111;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+}
+
+.craft-image {
+    background:
+        url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    min-height: 500px;
+}
+
+.craft-text {
+    padding: 70px 8%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.craft-text h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    text-transform: uppercase;
+    line-height: .95;
+    margin-bottom: 25px;
+    font-weight: 1000;
+}
+
+.craft-text p {
+    line-height: 1.7;
+    font-size: 17px;
+    color: #ddd;
+}
+
+.craft-text .yellow-btn {
+    width: fit-content;
+    margin-top: 30px;
+}
+
+/* FEATURE SECTIONS */
+.feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 470px;
+}
+
+.feature.reverse .feature-image {
+    order: 2;
+}
+
+.feature-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 420px;
+}
+
+.gift-image {
+    background-image:
+        url("https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=1200&q=85");
+}
+
+.catering-image {
+    background-image:
+        url("https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1200&q=85");
+}
+
+.feature-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 70px 10%;
+}
+
+.feature-text h2 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: .95;
+    text-transform: uppercase;
+    font-weight: 1000;
+    margin-bottom: 20px;
+}
+
+.feature-text p {
+    line-height: 1.6;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* RANKING */
+.ranking {
+    background: #f5c400;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.ranking h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    text-transform: uppercase;
+    font-weight: 1000;
+    margin-bottom: 20px;
+}
+
+.ranking p {
+    font-size: 19px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    padding: 70px 6% 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 45px;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: 1000;
+    margin-bottom: 20px;
+}
+
+.footer-logo span {
+    color: #f5c400;
+}
+
+footer h3 {
+    color: #f5c400;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: #f5c400;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social a {
+    border: 1px solid white;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-weight: bold;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    margin-top: 50px;
+    padding-top: 22px;
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    header {
+        min-height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 50px 25px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .craft,
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    .feature.reverse .feature-image {
+        order: 0;
+    }
+
+    .craft-image,
+    .feature-image {
+        min-height: 350px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .menu-section {
+        padding: 60px 20px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card,
+    .menu-card img {
+        min-height: 280px;
+        height: 280px;
+    }
+
+    .craft-text,
+    .feature-text {
+        padding: 55px 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style></head><body><!-- TOP BAR --><div class="top-bar">
+    WANT FREE SMASHBURGER?
+    <a href="#rewards">JOIN SMASHREWARDS!</a>
+</div><!-- HEADER --><header><div class="logo">
+    SMASH<span>BURGER</span>
+</div>
+
+<nav>
+    <a href="#menu">MENU</a>
+    <a href="#rewards">SMASHREWARDS</a>
+    <a href="#gift">GIFT CARDS</a>
+    <a href="#catering">CATERING</a>
+    <a href="#locations">LOCATIONS</a>
+    <a href="#" class="order-btn">ORDER NOW</a>
+</nav>
+
+</header><!-- HERO --><section class="hero"><div class="hero-content">
+
+    <h1>
+        Smoked.<br>
+        Stacked.<br>
+        Almost Gone
+    </h1>
+
+    <p>
+        Big flavor. Fresh ingredients. Made-to-order burgers.
+    </p>
+
+    <a href="#" class="yellow-btn">
+        Get it Now
+    </a>
+
+</div>
+
+</section><!-- REWARDS --><section class="rewards" id="rewards"><h2>Turn Cravings Into Rewards</h2>
+
+<p>
+    Join SmashRewards and unlock $5 off your first $15+ order —
+    plus earn 10 points for every dollar spent.
+    Sign up, dig in, and save. It's that easy.
+</p>
+
+<a href="#" class="black-btn">
+    Sign Up
+</a>
+
+</section><!-- MENU --><section class="menu-section" id="menu"><h2 class="section-title">Menu</h2>
+
+<div class="menu-grid">
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+            alt="Smashburger">
+        <h3>Smash® Everyday Value</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=800&q=80"
+            alt="Smashburger">
+        <h3>Smashburgers</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=800&q=80"
+            alt="Hot dog">
+        <h3>Big Dogs</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80"
+            alt="Chicken">
+        <h3>Chicken</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=800&q=80"
+            alt="Burger">
+        <h3>Black Bean</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+            alt="Fries">
+        <h3>Sides</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+            alt="Salad">
+        <h3>Salad</h3>
+    </div>
+
+    <div class="menu-card">
+        <img
+            src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80"
+            alt="Milkshake">
+        <h3>Hand-Spun Shakes</h3>
+    </div>
+
+</div>
+
+</section><!-- CRAFT --><section class="craft"><div class="craft-image"></div>
+
+<div class="craft-text">
+
+    <h2>We Take Pride In Our Craft</h2>
+
+    <p>
+        Our made-to-order burgers are built differently.
+        Using our signature smashing technique, we create
+        a mouthwatering caramelized, crispy sear that seals
+        in all the juicy goodness within.
+    </p>
+
+    <p style="margin-top:15px;">
+        From our custom burger spice blend to carefully
+        selected toppings, every ingredient is chosen for
+        maximum flavor impact.
+    </p>
+
+    <a href="#" class="yellow-btn">
+        About Our Food
+    </a>
+
+</div>
+
+</section><!-- GIFT CARDS --><section class="feature" id="gift"><div class="feature-image gift-image"></div>
+
+<div class="feature-text">
+
+    <h2>Gift Cards</h2>
+
+    <p>
+        Purchase virtual gift cards! Available in
+        $15–$250, choose the gift that fits the occasion.
+    </p>
+
+    <a href="#" class="black-btn">
+        Buy Gift Cards
+    </a>
+
+</div>
+
+</section><!-- SMASHREWARDS --><section class="feature reverse"><div class="feature-image"
+     style="
+     background-image:url('https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1200&q=85');
+     ">
+</div>
+
+<div class="feature-text">
+
+    <h2>Join SmashRewards</h2>
+
+    <p>
+        Order Smashburger fast, save your favorite orders,
+        earn points, and get free food.
+        It's really that simple!
+    </p>
+
+    <a href="#rewards" class="black-btn">
+        Join SmashRewards
+    </a>
+
+</div>
+
+</section><!-- CATERING --><section class="feature" id="catering"><div class="feature-image catering-image"></div>
+
+<div class="feature-text">
+
+    <h2>Catering</h2>
+
+    <p>
+        Make your next event a Smash!
+    </p>
+
+    <a href="#" class="black-btn">
+        Catering
+    </a>
+
+</div>
+
+</section><!-- RANKING --><section class="ranking"><h2>We Ranked #1</h2>
+
+<p>
+    Eat This Not That ranked Smashburger as the
+    #1 restaurant with the best Smashburgers.
+</p>
+
+<a href="#" class="black-btn">
+    Read All About Us
+</a>
+
+</section><!-- FOOTER --><footer id="locations"><div class="footer-grid">
+
+    <div>
+        <div class="footer-logo">
+            SMASH<span>BURGER</span>
+        </div>
+
+        <p>
+            Premium burgers, made fresh and smashed
+            to perfection.
+        </p>
+
+        <div class="social">
+            <a href="#">f</a>
+            <a href="#">in</a>
+            <a href="#">t</a>
+            <a href="#">ig</a>
+        </div>
+    </div>
+
+    <div>
+        <h3>Helpful Links</h3>
+        <a href="#">About Us</a>
+        <a href="#">Our Food</a>
+        <a href="#">Nutrition</a>
+        <a href="#">Catering</a>
+        <a href="#">News</a>
+        <a href="#">Delivery</a>
+        <a href="#">Rewards</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Locations</a>
+    </div>
+
+    <div>
+        <h3>Inquiries</h3>
+        <a href="#">Careers</a>
+        <a href="#">Deals</a>
+        <a href="#">Franchising</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <div>
+        <h3>Popular Searches</h3>
+        <a href="#">The Burger Hub</a>
+        <a href="#">Veggie Burgers</a>
+        <a href="#">What Is A Smash Burger?</a>
+        <a href="#">Smash Burger Recipe</a>
+        <a href="#">Burgers & Fries</a>
+        <a href="#">Burgers & Shakes</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 Smashburger — Demo Website
+</div>
+
+</footer></body>
 </html>
